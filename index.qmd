@@ -1,0 +1,198 @@
+---
+title: "Pengaruh Inflasi dan Pertumbuhan Ekonomi Terhadap Tingkat Pengangguran Terbuka (TPT) di Jawa Barat"
+author: "Milan Fathimah Az Zahra Sandy"
+date: 2024-01-23
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+![](poltekapp.jpg){fig-align="center" width="50%"}
+
+## Pendahuluan
+
+### Latar Belakang
+
+Tingkat Pengangguran Terbuka atau yang sering disebut dengan TPT merupakan persentase dari jumlah pengangguran terhadap jumlah angkatan kerja. Menurut Mantra (2009) pengangguran adalah bagian dari angkatan kerja yang sekarang ini tidak bekerja dan sedang aktif mencari pekerjaan. Konsep ini sering diartikan sebagai keadaan pengangguran terbuka. Pengangguran terbuka adalah persentase penduduk yang mencari pekerjaan, yang mempersiapkan usaha, yang tidak mencari pekerjaan karena merasa tidak mungkin mendapatkan pekerjaan, yang sudah mempunyai pekerjaan tetapi belum mulai bekerja dari sejumlah angkatan kerja yang ada (Sukirno, 2000).
+
+Salah satu faktor penyebab ada nya pengangguran terbuka yaitu inflasi dan pertumbuhan ekonomi. Inflasi yang tinggi akan menekan angka pengangguran yang semakin tinggi. Lalu untuk pertumbuhan ekonomi sendiri jika ia mengalami penurunan maka angka TPT akan mengalami kenaikan, begitu pula sebaliknya.
+
+### Ruang Lingkup
+
+Pada penelitian ini, penulis mengambil ruang lingkup yang sesuai dengan variabel yang dijelaskan. Penulis menggunakan 3 variabel, yaitu Inflasi dan Pertumbuhan Ekonomi Terhadap Tingkat Pengangguran Terbuka (TPT) di Jawa Barat. Data yang digunakan bersifat time series dalam kurun waktu 2017-2022.
+
+### Rumusan Masalah
+
+1.  Apakah inflasi dan pertumbuhan ekonomi berpengaruh signifikan terhadap TPT di Jawa Barat?
+2.  Apakah terdapat hubungan signifikan antara inflasi dan TPT di Jawa Barat?
+3.  Apakah pertumbuhan ekonomi berkontribusi terhadap penurunan TPT di Jawa Barat?
+4.  Bagaimana dampak jangka panjang dan jangka pendek dari inflasi dan pertumbuhan ekonomi terhadap TPT di Jawa Barat?
+
+### Tujuan dan Manfaat Penelitian
+
+Penelitian ini bertujuan untuk mengetahui pengaruh dari inflasi dan pertumbuhan ekonomi terhadap Tingkat Pengangguran Terbuka (TPT) di Jawa Barat pada tahun terkait (2017-2022).
+
+Manfaat penelitian ini agar masyarakat paham akan adanya pengaruh dari inflasi dan pertumbuhan ekonomi terhadap Tingkat Pengangguran Terbuka (TPT) di Jawa Barat pada tahun terkait (2017-2022).
+
+### Package
+
+```{r}
+#| warning: false
+#| echo: true
+library(readxl)
+library(dplyr)
+library(broom)
+```
+
+## Studi Pustaka
+
+1.  Inflasi
+
+    Inflasi didefinisikan dengan banyak ragam yang berbeda, tetapi semua definisi itu mencakup pokok-pokok yang sama. Samuelson (2001) memberikan definisi bahwa inflasi sebagai suatu keadaan dimana terjadi kenaikan tingkat harga umum, baik barang-barang, jasa-jasa maupun faktor-faktor produksi. Adapula pengertian inflasi menurut Gilarso (2013:200) adalah kenaikan harga umum, yang bersumber pada terganggunya keseimbangan antara arus uang dan arus barang.
+
+2.  Pertumbuhan Ekonomi
+
+    Pertumbuhan ekonomi adalah sebuah proses dari perubahan kondisi perekonomian yang terjadi di suatu negara secara berkesinambungan untuk menuju keadaan yang dinilai lebih baik selama jangka waktu tertentu. Pertumbuhan ekonomi merupakan upaya peningkatan kapasitas produksi untuk mencapai penambahan output, yang diukur menggunakan Produk Domestik Bruto (PDB) maupun menggunakan Produk Domestik Regional Bruto (PDRB) dalam suatu wilayah. (Rahardjo, 2013). Simon Kuznets (dalam Arsyad, 2010) menyatakan bahwa pertumbuhan ekonomi merupakan kenaikan kapasitas jangka panjang dari negara yang bersangkutan untuk menyediakan berbagai barang ekonomi kepada penduduknya. Kenaikan kapasitas tersebut dimungkinkan oleh adanya kemajuan atau penyesuaian-penyesuaian teknologi, institusional dan ideologi terhadap berbagai keadaan yang ada.
+
+## Metode Penelitian
+
+### Data
+
+Data dibawah ini merupakan data Inflasi, Pertumbuhan Ekonomi, dan TPT di Provinsi Jawa Barat (dalam bentuk persen).
+
+| Tahun | Inflasi | Pertumbuhan Ekonomi |  TPT  |
+|:-----:|:-------:|:-------------------:|:-----:|
+| 2017  | 3,63    |                5,29 | 8,22  |
+| 2018  | 3,54    |                5,64 | 8,23  |
+| 2019  | 3,42    |                5,07 | 8,04  |
+| 2020  | 1,99    |                2,44 | 10,46 |
+| 2021  | 1,74    |                3,74 | 9,82  |
+| 2022  | 5,75    |                5,45 | 8,31  |
+
+Penelitian ini menggunakan data sekunder dengan bentuk time series (2017-2022). Data yang digunakan yaitu data yang telah diolah dari Badan Pusat Statistik Jawa Barat.
+
+Baca data
+
+```{r}
+#| warning: false
+#| echo: true
+# import dataset
+library(readxl)
+dat<-read_excel("C:/UAS METOPEL/BOOK5.xlsx")
+summary(dat)
+str(dat)
+```
+
+```{r}
+dat<-read_excel("C:/PLOT ERROR INFLASI/BOOK1.xlsx")
+reg1<-lm(y~x,data=dat)
+dat$u<-resid(reg1)
+plot(dat$x,dat$u,xlab="Inflasi",ylab="error")
+abline(h=0)
+```
+
+Plot pengaruh error terhadap inflasi
+
+```{r}
+dat<-read_excel("C:/PLOT ERROR INFLASI/BOOK1.xlsx")
+reg1<-lm(y~x,data=dat)
+dat$u<-resid(reg1)
+plot(dat$y,dat$u,xlab="TPT",ylab="error")
+abline(h=0)
+```
+
+Plot pengaruh error terhadap TPT
+
+### Metode Analisis
+
+Metode analisis yang dipilih adalah Regresi Multivariat dengan 2 variabel independen. Penelitian ini bertujuan untuk mengetahui pengaruh dari inflasi (X1) dan pertumbuhan ekonomi (X2) terhadap Tingkat Pengangguran Terbuka (Y) di Jawa Barat pada tahun terkait (2017-2022). Spesifikasinya adalah:
+
+$$
+Y=\beta_0 + \beta_1 X_1+\ \beta_2 X_2+\ \mu_t
+$$ Di mana $Y$ adalah hwy dan $X1$ serta $X2$ adalah cty. Di mana Y adalah TPT Jawa Barat, X1 adalah inflasi Jawa Barat, dan X2 adalah pertumbuhan ekonomi Jawa Barat.
+
+## Pembahasan
+
+### Pembahasan Masalah
+
+| Variable           | Coefficient | Std.Error | t-value | Prob (.) |
+|--------------------|:------------|----------:|--------:|:--------:|
+| Intercept          | 12.46913    |   0.58539 |  21.300 | 0.000226 |
+| Inflasi            | -0.01116    |   0.16125 |  -0.069 | 0.949199 |
+| PertumbuhanEkonomi | -0.77853    |   0.18424 |  -4.226 | 0.024239 |
+| R Squared          | 0.9333      |           |         |          |
+| Adjusted R-Squared | 0.8889      |           |         |          |
+| F-Statistic        | 21          |           |         |          |
+| Prob(F-Statistic)  | 0.01721     |           |         |          |
+
+Hasil regresi yang didapatkan kemudian dimasukkan ke dalam rumus persamaan
+
+$$
+Y=12.469 + (-0.011 X1) + (-0.778 X2)
+$$
+
+Inflasi berperan dalam penurunan TPT dikarenakan variabel X1 yang negatif. Begitu pula dengan Pertumbuhan Ekonomi yang berperan penurunan TPT. Jika diasumsikan inflasi naik 1%, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.011. Jika diasumsikan pertumbuhan ekonomi naik 1%, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.778.
+
+### Analisis Masalah
+
+Hasil regresinya adalah
+
+```{r}
+#| warning: false
+#| echo: true
+library(readxl)
+dat<-read_excel("C:/UAS METOPEL/BOOK5.xlsx")
+reg1<-lm(TPT~Inflasi+PertumbuhanEkonomi,data=dat)
+summary(reg1)
+```
+
+## Kesimpulan
+
+### Kesimpulan Regresi
+
+Dari hasil regresi multivariat di atas, maka dapat disimpulkan antara lain:
+
+1\. a sebesar 12.46913 merupakan konstanta atau keadaan saat variabel TPT belum dipengaruhi oleh variabel lainnya, yaitu variabel inflasi (X1) dan pertumbuhan ekonomi (X2). Jika variabel independen tidak ada, maka variabel TPT di Jawa Barat tidak akan mengalami perubahan.
+
+2\. Nilai koefisien regresi inflasi (X1) bernilai negatif sebesar -0.011 dapat diasumsikan bahwa jika variabel inflasi meningkat, maka TPT di Jawa Barat akan menurun sebesar 0.011.
+
+3\. Nilai koefisien regresi pertumbuhan ekonomi (X2) bernilai negatif sebesar -0.788 dapat diasumsikan bahwa jika variabel pertumbuhan ekonomi meningkat, maka TPT di Jawa Barat akan menurun sebesar 0.778.
+
+### Uji Hipotesis
+
+Dari hasil regresi multivariat di atas, maka dapat disimpulkan uji hipotesis yang diperoleh antara lain:
+
+1\. Nilai sig variabel inflasi (X1) sebesar 0.94 (\>0.05), maka dapat disimpulkan bahwa variabel inflasi (X1) tidak berpengaruh signifikan terhadap variabel TPT di Jawa Barat (Y).
+
+2\. Nilai sig variabel pertumbuhan ekonomi (X2) sebesar 0.02 (\<0.05), maka dapat disimpulkan bahwa variabel pertumbuhan ekonomi (X2) berpengaruh signifikan terhadap variabel TPT di Jawa Barat (Y).
+
+### Koefisien Determinasi
+
+Berdasarkan hasil regresi yang didapatkan, diketahui bahwa nilai koefisien determinasi sebesar 93.33% yang artinya inflasi dan pertumbuhan ekonomi Jawa Barat memberikan kontribusi sebesar 93.33% terhadap TPT di Jawa Barat. Sedangkan sisanya sebesar 6.67% disebabkan oleh faktor lain yang tidak diteliti oleh penulis.
+
+### Kesimpulan Akhir
+
+Berdasarkan rumusan masalah yang sudah diberitahukan. Maka dapat disimpulkan sebagai berikut:
+
+1\. Untuk inflasi sendiri tidak berpengaruh signifikan terhadap TPT di Jawa Barat karena memiliki nilai signifikansi 0.94 (\>0.05). Sedangkan pertumbuhan ekonomi berpengaruh signifikan terhadap TPT di Jawa Barat karena memiliki nilai signifikansi 0.02 (\<0.05).
+
+2\. Inflasi tidak berpengaruh signifikan terhadap TPT di Jawa Barat.
+
+3\. Pertumbuhan ekonomi berkontribusi terhadap penurunan TPT di Jawa Barat sebesar 0.778.
+
+4\. Dampak jangka pendek dan jangka panjang untuk inflasi dan pertumbuhan ekonomi sudah pasti akan mempengaruhi TPT yang di mana ketika inflasi naik, maka angka TPT di Jawa Barat akan semakin meningkat karena perusahaan akan mengurangi output dan mengambil kebijakan dengan mengurangi tenaga kerja. Sehingga, akan ada PHK. Terutama jika hiperinflasi pasti akan terjadi PHK massal. Kemudian untuk pertumbuhan ekonomi, ketika naik maka angka TPT di Jawa Barat akan mengalami penurunan. Karena pertumbuhan ekonomi yang naik menandakan kesejahteraan masyarakat di daerah tersebut. Semakin tinggi pertumbuhan ekonomi, maka kesejahteraan masyarakat akan semakin baik sehingga angka TPT akan menurun.
+
+## Referensi
+
+Marini, L., & Putri, N. T. (2020). Peluang Terjadinya Pengangguran Di Provinsi Bengkulu : Seberapa Besar?. Convergence: The Journal of Economic Development, 1(2), 70–83. https://doi.org/10.33369/convergence-jep.v1i2.10900.
+
+Suparmono, & Puteri, N. A. (2018). Analisis Pengangguran Terbuka Di Provinsi Jawa Timur Tahun 2013-2016. Yogyakarta: Universitas Islam Indonesia, 20–55.
+
+Milasari, A. S. (2020). Pengaruh Perubahan Nilai Tukar Terhadap Harga Barang Impor Dan Inflasi Dalam Negeri Di Beberapa Negara Industri. Jurnal Ekonomi, 14–35.
+
+Sulistiawati, R. (2012). Pengaruh Investasi terhadap Pertumbuhan Ekonomi dan Penyerapan Tenaga Kerja Serta Kesejahteraan Masyarakat di Provinsi di Indonesia. Jurnal Ekonomi Bisnis Dan Kewirausahaan, 3(1), 29–50. DOI :10.26418/jebik.v3i1.9888.
+
+Badan Pusat Statistik. Tingkat Pengangguran Terbuka Kabupaten/Kota (Persen), 2017-2022. Badan Pusat Statistik Provinsi Jawa Barat, accessed: 02-01-2024.
+
+Bintang, Y. S., & Prana, R. R. (2020). Pengaruh Inflasi terhadap Tingkat Pengangguran Terbuka di Kota Medan Sri. Jurnal Studi Manajemen, 5–24.
