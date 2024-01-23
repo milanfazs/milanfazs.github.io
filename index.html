@@ -173,9 +173,11 @@ window.Quarto = {
 <section id="package" class="level3" data-number="1.5">
 <h3 data-number="1.5" class="anchored" data-anchor-id="package"><span class="header-section-number">1.5</span> Package</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -266,6 +268,7 @@ window.Quarto = {
  $ TPT               : num [1:6] 8.22 8.23 8.04 10.46 9.82 ...</code></pre>
 </div>
 </div>
+<p><strong>Plot pengaruh error terhadap Inflasi</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"C:/PLOT ERROR INFLASI/BOOK1.xlsx"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(y<span class="sc">~</span>x,<span class="at">data=</span>dat)</span>
@@ -280,7 +283,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Plot pengaruh error terhadap inflasi</p>
+<p><strong>Plot pengaruh error terhadap TPT</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"C:/PLOT ERROR INFLASI/BOOK1.xlsx"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(y<span class="sc">~</span>x,<span class="at">data=</span>dat)</span>
@@ -295,7 +298,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Plot pengaruh error terhadap TPT</p>
+<p><strong>Plot Hubungan Antara Inflasi, Pertumbuhan Ekonomi dan TPT</strong> <img src="Rplotggp.png" class="img-fluid quarto-figure quarto-figure-center"></p>
 </section>
 <section id="metode-analisis" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="metode-analisis"><span class="header-section-number">3.2</span> Metode Analisis</h3>
@@ -312,61 +315,61 @@ Y=\beta_0 + \beta_1 X_1+\ \beta_2 X_2+\ \mu_t
 <table class="table">
 <thead>
 <tr class="header">
-<th>Variable</th>
-<th style="text-align: left;">Coefficient</th>
-<th style="text-align: right;">Std.Error</th>
-<th style="text-align: right;">t-value</th>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">Std.Error</th>
+<th style="text-align: center;">t-value</th>
 <th style="text-align: center;">Prob (.)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Intercept</td>
-<td style="text-align: left;">12.46913</td>
-<td style="text-align: right;">0.58539</td>
-<td style="text-align: right;">21.300</td>
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: center;">12.46913</td>
+<td style="text-align: center;">0.58539</td>
+<td style="text-align: center;">21.300</td>
 <td style="text-align: center;">0.000226</td>
 </tr>
 <tr class="even">
-<td>Inflasi</td>
-<td style="text-align: left;">-0.01116</td>
-<td style="text-align: right;">0.16125</td>
-<td style="text-align: right;">-0.069</td>
+<td style="text-align: left;">Inflasi</td>
+<td style="text-align: center;">-0.01116</td>
+<td style="text-align: center;">0.16125</td>
+<td style="text-align: center;">-0.069</td>
 <td style="text-align: center;">0.949199</td>
 </tr>
 <tr class="odd">
-<td>PertumbuhanEkonomi</td>
-<td style="text-align: left;">-0.77853</td>
-<td style="text-align: right;">0.18424</td>
-<td style="text-align: right;">-4.226</td>
+<td style="text-align: left;">Pertumbuhan Ekonomi</td>
+<td style="text-align: center;">-0.77853</td>
+<td style="text-align: center;">0.18424</td>
+<td style="text-align: center;">-4.226</td>
 <td style="text-align: center;">0.024239</td>
 </tr>
 <tr class="even">
-<td>R Squared</td>
-<td style="text-align: left;">0.9333</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: left;">R Squared</td>
+<td style="text-align: center;">0.9333</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td>Adjusted R-Squared</td>
-<td style="text-align: left;">0.8889</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: left;">Adjusted R-Squared</td>
+<td style="text-align: center;">0.8889</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td>F-Statistic</td>
-<td style="text-align: left;">21</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: left;">F-Statistic</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr class="odd">
-<td>Prob(F-Statistic)</td>
-<td style="text-align: left;">0.01721</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: left;">Prob(F-Statistic)</td>
+<td style="text-align: center;">0.01721</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 </tbody>

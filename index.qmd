@@ -40,9 +40,11 @@ Manfaat penelitian ini agar masyarakat paham akan adanya pengaruh dari inflasi d
 ```{r}
 #| warning: false
 #| echo: true
+library(tidyverse)
 library(readxl)
 library(dplyr)
 library(broom)
+library(ggplot2)
 ```
 
 ## Studi Pustaka
@@ -84,6 +86,7 @@ summary(dat)
 str(dat)
 ```
 
+**Plot pengaruh error terhadap Inflasi**
 ```{r}
 dat<-read_excel("C:/PLOT ERROR INFLASI/BOOK1.xlsx")
 reg1<-lm(y~x,data=dat)
@@ -92,8 +95,7 @@ plot(dat$x,dat$u,xlab="Inflasi",ylab="error")
 abline(h=0)
 ```
 
-Plot pengaruh error terhadap inflasi
-
+**Plot pengaruh error terhadap TPT**
 ```{r}
 dat<-read_excel("C:/PLOT ERROR INFLASI/BOOK1.xlsx")
 reg1<-lm(y~x,data=dat)
@@ -102,7 +104,8 @@ plot(dat$y,dat$u,xlab="TPT",ylab="error")
 abline(h=0)
 ```
 
-Plot pengaruh error terhadap TPT
+**Plot Hubungan Antara Inflasi, Pertumbuhan Ekonomi dan TPT**
+![](Rplotggp.png){fig-align="center"}
 
 ### Metode Analisis
 
@@ -116,15 +119,15 @@ $$ Di mana $Y$ adalah hwy dan $X1$ serta $X2$ adalah cty. Di mana Y adalah TPT J
 
 ### Pembahasan Masalah
 
-| Variable           | Coefficient | Std.Error | t-value | Prob (.) |
-|--------------------|:------------|----------:|--------:|:--------:|
-| Intercept          | 12.46913    |   0.58539 |  21.300 | 0.000226 |
-| Inflasi            | -0.01116    |   0.16125 |  -0.069 | 0.949199 |
-| PertumbuhanEkonomi | -0.77853    |   0.18424 |  -4.226 | 0.024239 |
-| R Squared          | 0.9333      |           |         |          |
-| Adjusted R-Squared | 0.8889      |           |         |          |
-| F-Statistic        | 21          |           |         |          |
-| Prob(F-Statistic)  | 0.01721     |           |         |          |
+| Variable            | Coefficient | Std.Error | t-value | Prob (.) |
+|:--------------------|:-----------:|:---------:|:-------:|:--------:|
+| Intercept           | 12.46913    |   0.58539 |  21.300 | 0.000226 |
+| Inflasi             | -0.01116    |   0.16125 |  -0.069 | 0.949199 |
+| Pertumbuhan Ekonomi | -0.77853    |   0.18424 |  -4.226 | 0.024239 |
+| R Squared           | 0.9333      |           |         |          |
+| Adjusted R-Squared  | 0.8889      |           |         |          |
+| F-Statistic         | 21          |           |         |          |
+| Prob(F-Statistic)   | 0.01721     |           |         |          |
 
 Hasil regresi yang didapatkan kemudian dimasukkan ke dalam rumus persamaan
 
