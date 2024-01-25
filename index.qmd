@@ -157,11 +157,9 @@ summary(reg1)
 
 Dari hasil regresi multivariat di atas, maka dapat disimpulkan antara lain:
 
-1\. a sebesar 12.46913 merupakan konstanta atau keadaan saat variabel TPT belum dipengaruhi oleh variabel lainnya, yaitu variabel inflasi (X1) dan pertumbuhan ekonomi (X2). Jika variabel independen tidak ada, maka variabel TPT di Jawa Barat tidak akan mengalami perubahan.
-
-2\. Nilai koefisien regresi inflasi (X1) bernilai negatif sebesar -0.011 dapat diasumsikan bahwa jika variabel inflasi meningkat 1 satuan, maka TPT di Jawa Barat akan menurun sebesar 0.011.
-
-3\. Nilai koefisien regresi pertumbuhan ekonomi (X2) bernilai negatif sebesar -0.788 dapat diasumsikan bahwa jika variabel pertumbuhan ekonomi meningkat 1 satuan, maka TPT di Jawa Barat akan menurun sebesar 0.778.
+1.  a sebesar 12.46913 merupakan konstanta atau keadaan saat variabel TPT belum dipengaruhi oleh variabel lainnya, yaitu variabel inflasi (X1) dan pertumbuhan ekonomi (X2). Jika variabel independen tidak ada, maka variabel TPT di Jawa Barat tidak akan mengalami perubahan.
+2.  Nilai koefisien regresi inflasi (X1) bernilai negatif sebesar -0.011 dapat diasumsikan bahwa jika variabel inflasi meningkat 1 satuan, maka TPT di Jawa Barat akan menurun sebesar 0.011.
+3.  Nilai koefisien regresi pertumbuhan ekonomi (X2) bernilai negatif sebesar -0.788 dapat diasumsikan bahwa jika variabel pertumbuhan ekonomi meningkat 1 satuan, maka TPT di Jawa Barat akan menurun sebesar 0.778.
 
 ### Uji Hipotesis
 
