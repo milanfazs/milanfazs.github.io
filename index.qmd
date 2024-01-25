@@ -142,7 +142,7 @@ $$
 Y=12.469 + (-0.011 X1) + (-0.778 X2)
 $$
 
-Inflasi berperan dalam penurunan TPT dikarenakan variabel X1 yang negatif. Begitu pula dengan Pertumbuhan Ekonomi yang berperan dalam penurunan TPT. Jika diasumsikan inflasi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.011. Jika diasumsikan pertumbuhan ekonomi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.778.
+Inflasi berperan dalam penurunan TPT dikarenakan variabel X1 yang negatif. Begitu pula dengan Pertumbuhan Ekonomi yang berperan dalam penurunan TPT. Jika diasumsikan inflasi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.011. Kemudian jika pertumbuhan ekonomi diasumsikan naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.778.
 
 ### Analisis Masalah
 
