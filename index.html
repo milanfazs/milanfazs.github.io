@@ -380,7 +380,7 @@ Y=\beta_0 + \beta_1 X_1+\ \beta_2 X_2+\ \mu_t
 <p><span class="math display">\[
 Y=12.469 + (-0.011 X1) + (-0.778 X2)
 \]</span></p>
-<p>Inflasi berperan dalam penurunan TPT dikarenakan variabel X1 yang negatif. Begitu pula dengan Pertumbuhan Ekonomi yang berperan penurunan TPT. Jika diasumsikan inflasi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.011. Jika diasumsikan pertumbuhan ekonomi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.778.</p>
+<p>Inflasi berperan dalam penurunan TPT dikarenakan variabel X1 yang negatif. Begitu pula dengan Pertumbuhan Ekonomi yang berperan dalam penurunan TPT. Jika diasumsikan inflasi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.011. Jika diasumsikan pertumbuhan ekonomi naik 1 satuan, maka TPT di Jawa Barat akan mengalami penurunan sebesar 0.778.</p>
 </section>
 <section id="analisis-masalah" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="analisis-masalah"><span class="header-section-number">4.2</span> Analisis Masalah</h3>
@@ -425,8 +425,8 @@ F-statistic:    21 on 2 and 3 DF,  p-value: 0.01721</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'car'</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Membuat plot sisa parsial</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Membuat plot sisa parsial</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'car'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"C:/UAS METOPEL/BOOK5.xlsx"</span>)</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(TPT <span class="sc">~</span> Inflasi <span class="sc">+</span> PertumbuhanEkonomi, <span class="at">data =</span> dat)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">crPlots</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
