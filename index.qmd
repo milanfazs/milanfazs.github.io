@@ -114,7 +114,7 @@ Metode analisis yang dipilih adalah Regresi Multivariat dengan 2 variabel indepe
 
 $$
 Y=\beta_0 + \beta_1 X_1+\ \beta_2 X_2+\ \mu_t
-$$ Di mana $Y$ adalah hwy dan $X1$ serta $X2$ adalah cty. Di mana Y adalah TPT Jawa Barat, X1 adalah inflasi Jawa Barat, dan X2 adalah pertumbuhan ekonomi Jawa Barat.
+$$ Di mana $Y$ adalah TPT Jawa Barat, $X1$ adalah inflasi Jawa Barat, dan $X2$ adalah pertumbuhan ekonomi Jawa Barat.
 
 ## Pembahasan
 
