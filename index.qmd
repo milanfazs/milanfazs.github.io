@@ -40,11 +40,13 @@ Manfaat penelitian ini agar masyarakat paham akan adanya pengaruh dari inflasi d
 ```{r}
 #| warning: false
 #| echo: true
-library(tidyverse)
-library(readxl)
-library(dplyr)
-library(broom)
-library(ggplot2)
+library('tidyverse')
+library('corrplot')
+library('car')
+library('readxl')
+library('dplyr')
+library('broom')
+library('ggplot2')
 ```
 
 ## Studi Pustaka
@@ -151,6 +153,20 @@ reg1<-lm(TPT~Inflasi+PertumbuhanEkonomi,data=dat)
 summary(reg1)
 ```
 
+```{r}
+# Membuat plot matriks korelasi
+dat<-read_excel("C:/UAS METOPEL/BOOK5.xlsx")
+corrplot(cor(dat))
+```
+
+```{r}
+library('car')
+#Membuat plot sisa parsial
+dat<-read_excel("C:/UAS METOPEL/BOOK5.xlsx")
+model <- lm(TPT ~ Inflasi + PertumbuhanEkonomi, data = dat)
+crPlots(model)
+```
+
 ## Kesimpulan
 
 ### Kesimpulan Regresi
@@ -166,7 +182,7 @@ Dari hasil regresi multivariat di atas, maka dapat disimpulkan antara lain:
 Dari hasil regresi multivariat di atas, maka dapat disimpulkan uji hipotesis yang diperoleh antara lain:
 
 1.  Nilai sig variabel inflasi (X1) sebesar 0.94 (\>0.05), maka dapat disimpulkan bahwa variabel inflasi (X1) tidak berpengaruh signifikan terhadap variabel TPT di Jawa Barat (Y).
-2.   Nilai sig variabel pertumbuhan ekonomi (X2) sebesar 0.02 (\<0.05), maka dapat disimpulkan bahwa variabel pertumbuhan ekonomi (X2) berpengaruh signifikan terhadap variabel TPT di Jawa Barat (Y).
+2.  Nilai sig variabel pertumbuhan ekonomi (X2) sebesar 0.02 (\<0.05), maka dapat disimpulkan bahwa variabel pertumbuhan ekonomi (X2) berpengaruh signifikan terhadap variabel TPT di Jawa Barat (Y).
 
 ### Koefisien Determinasi
 
